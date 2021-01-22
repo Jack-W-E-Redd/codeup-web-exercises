@@ -13,14 +13,13 @@
      */
 
 
- var person = {
+    var person = {
         firstName: "Rick",
         lastName: "Sanchez"
     }
 
     console.log(this.firstName);
     console.log(this.lastName);
-
 
 
     /**
@@ -33,7 +32,7 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
- console.log(this.sayHello = "Hello from" + this.firstName + '' + this.lastName);
+    console.log(this.sayHello = "Hello from" + this.firstName + '' + this.lastName);
 
     console.log(this.sayHello());
 
@@ -54,30 +53,17 @@
 //
     var shoppers = [
         {name: 'Cameron', amount: 180},
-         {name: 'Ryan', amount: 250},
-         {name: 'George', amount: 320}
-     ];
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
 
-     shoppers.forEach(function (shopper ){
-         let totalNeededForDiscountInDollars = 200;
-         let discountPercentage = .12;
-         let finalDiscount;
-         let amountLeftToSpendForDisount;
-         if (shopper.amount >= totalNeededForDiscountInDollars) {
-             finalDiscount = shopper.amount - (shopper.amount * discountPercentage);
-             console.log(shopper.name
-             + "'s total is"
-             + numToDollars(shopper.amount)
-             +"."
-             +"\n"
-             + shopper.name
-             + "'s new total after discount is"
-             + numToDollars(finalDiscount));
+    shoppers.forEach(function (item) {
+        if (item.amount < 200) {
+            console.log(item.name + ': Original Cost: $' + item.amount + 'Amount after promo: $' + item.amount + '. Price below $200, does not qualify you for promo');
+        } else {
+            console.log(item.name + ': Original Cost: $' + item.amount + ' Amount after Promo: $' + (item.amount * .88));
 
-         } else if (shopper.amount <= 200) {
-             amountLeftToSpendForDisount = totalNeededForDiscountInDollars - shopper.name;
-             console.log(shopper.name + "ineligible" + "add" + amountLeftToSpendForDisount)
-         }
+        }
     });
 
 
@@ -94,7 +80,47 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+var books = [
+        {
+            title: 'The Salmon of Doubt',
+            author: {
+                firstName: 'Douglas',
+                lastName: 'Adams',
+            }
+        },
+        {
+            title: 'Call of the Wild',
+            author: {
+                firstName: 'Jack',
+                lastName: 'London',
+            }
+        },
+        {
+            title: 'It',
+            author: {
+                firstName: 'Steven',
+                lastName: 'King',
+            }
+        },
+        {
+            title: 'Insatiable',
+            author: {
+                firstName: 'Asa',
+                lastName: 'Akira'
+            }
+        },
+        {
+            title: 'Wait for the Corn',
+            author: {
+                firstName: 'Vic',
+                lastName: 'Cipolla',
+            }
+        },
+    ];
 
+console.log(books[0].title);
+console.log(books[0].author.firstName);
+console.log(books[0].author.lastName);
 
     /**
      * TODO:
@@ -120,6 +146,16 @@
      *      ---
      *      ...
      */
+
+    books.forEach(function (book) {
+        var index = books.indexOf(book);
+        var authorName = book.author.firstName + '' + book.author.lastName;
+        console.log('book # ' + (index+1));
+        console.log('Title: ' + book.title);
+        console.log('Author: ' + authorName);
+        console.log('---')
+    });
+
 
     /**
      * Bonus:

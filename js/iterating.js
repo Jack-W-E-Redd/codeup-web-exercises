@@ -63,21 +63,19 @@ console.log(names.length);
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-function first(array) {
-    return array[0];
+    var numbers = [1, 2, 3, 4, 5];
+    function first(array) {
+        console.log('returns the first item in the array: ' + array[0])
     }
-
-    console.log(first(names));
-
-function second(array) {
-    return array[1];
-}
-    console.log(second(names));
-
-function last(array) {
-    return array[array.length - 1];
-}
-    console.log(last(names));
+    function second(array) {
+        console.log('returns the second item in the array: ' + array[1])
+    }
+    function last(array) {
+        console.log('returns the last item in the array: ' + array[(array.length - 1)])
+    }
+    first(numbers);
+    second(numbers);
+    last(numbers);
 
 
 })();

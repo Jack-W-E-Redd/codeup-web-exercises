@@ -18,22 +18,25 @@
      * the step that it describes
      */
 
+    planets.unshift("the Sun");
     console.log('Adding "The Sun" to the beginning of the planets array.');
-    planets.unshift(items: )
     console.log(planets);
 
+    planets.push("Pluto");
     console.log('Adding "Pluto" to the end of the planets array.');
     console.log(planets);
 
+    planets.shift();
     console.log('Removing "The Sun" from the beginning of the planets array.');
     console.log(planets);
 
-    planets.pop("Pluto");
+    planets.pop();
     console.log('Removing "Pluto" from the end of the planets array.');
     console.log(planets);
 
-    console.log(planets.indexOf("Earth"));
+    var earthIndex = planets.indexOf("Earth");
     console.log('Finding and logging the index of "Earth" in the planets array.');
+    console.log("The index of 'Earth' is:" + earthIndex);
 
     planets.reverse();
     console.log("Reversing the order of the planets array.");

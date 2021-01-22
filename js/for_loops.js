@@ -13,12 +13,10 @@
 
 // 2) Works
 
-function showMultiplication (num) {
-
-  for (var i = 0; i <= 10; i++) {
-      var result = num * i;
-      console.log(num + " x " + i + " = " + result);
-  }
+function showMultiplicationTable(input){
+    for (var x = 1; x < 10; x++){
+        console.log((input + '*' + x + '=' + (input * x)))
+    }
 }
 
 // 3) Works
@@ -37,21 +35,21 @@ for (var i = 0; i < 10; i++) {
     }
 }
 
-// 4) Still in progress
-
-function generatePyramid() {
-    var totalNumberofRows = 5;
-    var output = '';
-    for (var i = 1; i <= totalNumberofRows; i++) {
-        for (var j = 1; j <= i; j++) {
-            output += j + '  ';
-        }
-        console.log(output);
-        output = '';
-    }
-}
-
-generatePyramid();
+// // 4) Still in progress
+//
+// function generatePyramid() {
+//     var totalNumberofRows = 5;
+//     var output = '';
+//     for (var i = 1; i <= totalNumberofRows; i++) {
+//         for (var j = 1; j <= i; j++) {
+//             output += j + '  ';
+//         }
+//         console.log(output);
+//         output = '';
+//     }
+// }
+//
+// generatePyramid();
 
 // 4) Works
 

@@ -1,0 +1,29 @@
+.jumbotron {
+    position: absolute;
+    width: 100%;
+}
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 4em;
+    padding-top: 2em;
+    opacity: 0.5;
+    background: white;
+}
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}

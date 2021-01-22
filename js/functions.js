@@ -21,8 +21,8 @@ function sayHello(name) {
  *
  * console.log 'helloMessage' to check your work
  */
-var myName = "jack");
-console.log(sayHello(myName));
+var helloMessage = sayHello ("jack");
+console.log(helloMessage);
 // Justin's:
 //
 /**
@@ -31,6 +31,9 @@ console.log(sayHello(myName));
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+
+var myName = " Jack ";
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -53,12 +56,14 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-// function isTwo(num) {
-//     return num === 2;
-// }
 
-// console.log(random);
-// console.log(isTwo(random));
+function isTwo(num) {
+    return num === 2;
+}
+
+console.log(random);
+console.log(isTwo(random));
+
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -83,8 +88,8 @@ var random = Math.floor((Math.random() * 3) + 1);
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-var billDollars = prompt(message: "How much would you like to tip your server?");
-var percentage = prompt(message: "Give us your bill and we'll give you a recommended tip amount.");
+var billDollars = prompt ("How much would you like to tip your server?");
+var percentage = prompt("Give us your bill and we'll give you a recommended tip amount.");
 
 var tipAmountDollars = calculateTip(billDollars, percentage);
 
@@ -112,8 +117,12 @@ alert("We would like it if you tipped. " + calculateTip(tipamount, billtotal) + 
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-function applyDiscount(billDollars, discountPercentage) {
-    return billDollars - (billDollars * discountPercentage);
+function applyDiscount(x, y) {
+    var price = x;
+    var percentageOff = y;
+    var discountPrice = price - (price * percentageOff);
+    return discountPrice;
 }
 
-console.log(apply)
+console.log(applyDiscount(45.99, .12));
+console.log(applyDiscount(60, .2));

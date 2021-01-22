@@ -1,0 +1,43 @@
+.fancy-header {
+    text-decoration: underline;
+    text-align: center;
+}
+header {
+    text-align: center;
+    padding: 30px;
+}
+body {
+    font-style: italic;
+    text-align: center;
+    list-style-position: inside;
+}
+h2 {
+    text-decoration: underline;
+}
+ul, ol {
+    list-style: none;
+}
+#company-morals {
+    background-size: 660px;
+    color: navy;
+}
+tr>td {
+    text-align: center;
+    border: .5px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    padding: 10px;
+}
+a:visited {
+    color: black;
+}
+a:link {
+    color: blue;
+}
+a:hover {
+    color: blue;
+}
+a:active {
+    color: green;
+}

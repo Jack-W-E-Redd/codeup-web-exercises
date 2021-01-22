@@ -39,8 +39,10 @@ function analyzeColor(color){
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'],
-    randomColor = colors[Math.floor(Math.random() * colors.length)],
+
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+var randomColor = colors[Math.floor(Math.random() * colors.length)],
+
     /**
      * TODO:
      * Refactor your above function to use a switch-case statement
@@ -51,6 +53,7 @@ var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'],
  * You should see a different message every time you refresh the page
  */
 
+  console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
@@ -58,6 +61,9 @@ var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'],
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+var useColor = prompt("Enter your color: ");
+alert(analyzeColor(useColor));
 
 /* ########################################################################## */
 
@@ -81,6 +87,30 @@ var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'],
  * return value.
  */
 
+function calculateTotal(luckyNumber, totalAmount) {
+    switch(luckyNumber) {
+        case 1:
+            return (totalAmount - (totalAmount * .1).toFixed(2));
+        case 2:
+            return (totalAmount - (totalAmount * .25).toFixed(2));
+        case 3:
+            return (totalAmount - (totalAmount * .35).toFixed(2));
+        case 4:
+            return (totalAmount - (totalAmount * .5).toFixed(2));
+        case 5:
+            return 0;
+        default:
+            return (totalAmount.toFixed(2));
+    }
+}
+
+console.log(calculateTotal(0, 100));
+console.log(calculateTotal(1, 100));
+console.log(calculateTotal(2, 100));
+console.log(calculateTotal(3, 100));
+console.log(calculateTotal(4, 100));
+console.log(calculateTotal(5, 100));
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -90,6 +120,15 @@ var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'],
  */
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
+
+var luckyNumber = Math.floor(Math.random() * 6);
+
+var totalBill = parseFloat(prompt("Enter Total Bill:"));
+alert('Your lucky number is ' + luckyNumber);
+alert('Your price before discount is: ' + totalBill);
+
+var totalAfterDiscount = calculateTotal(luckyNumber, totalBill);
+alert("Your price after discount is: " + totalAfterDiscount);
 
 /**
  * TODO:
@@ -107,3 +146,17 @@ var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'],
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+var confirmNumberInput = confirm("Would you like to enter a number?");
+if (confirmNumberInput) {
+    var confirmNumberInput = +prompt("Enter a number: ");
+    if (isNaN(confirmNumberInput)) {
+        alert("You did not enter a number.");
+    } else {
+        (confirmNumberInput % 2 === 0) ? alert("You entered an even number") : alert("You entered an odd number");
+        (confirmNumberInput >= 0) ? alert("You entered a positive number") : alert("You entered a negative number");
+        alert("The number you entered plus 100 is equal " + (confirmNumberInput + 100));
+    }
+} else {
+    alert("You chose not to enter a number");
+}
