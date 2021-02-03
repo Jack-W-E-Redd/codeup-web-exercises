@@ -1,31 +1,26 @@
 // $(document).ready(function() {
 //     alert("Dom is ready to go!")
 // })
-<<<<<<< HEAD
-"use strict";
+
+'use strict'
+
+$(document).ready(function (){
 
 
-$(document).ready(function(){
-    $('li').css('font-size', '20px');
-    $('h1, p, li').css("background", "green")
-    let headingAlert = $('h1').html();
-    alert(headingAlert);
-=======
-
-$(document).ready(function() {
-    $("h1").click(function() {
+    $("h1").click(function(){
         $(this).css("background-color", "green");
     });
-    $("p").dblclick(function() {
+
+    $("p").dblclick(function(){
         $(this).css("font-size", "18px");
     })
+
     $("li").hover(
         function () {
-            $(this).css("color", "green");
-        },
+            $(this).css("color","green");
+            },
         function () {
-            $(this).css("color", "black");
+            $(this).css("color","black");
         }
     );
->>>>>>> Luna-JQuery
 });
