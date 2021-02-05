@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+        .highlighted {
+            /*background-color: #FAD3D7;*/
+            background-color: lightgreen;
+
+        }
+        h1 {
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1>National Parks FAQs</h1>
+<dl>
+    <dt>How many acres of wild landscapes and historic site do The National Park Service protect? </dt>
+    <dd class="invisible">84 Million acres.</dd>
+    <br>
+    <dt>How many employees are in the National Park Service</dt>
+    <dd class="invisible">Permanent, temporary, and seasonal employees: Approximately 20,000</dd>
+    <br>
+    <dt>How many areas are in the National Park System?</dt>
+    <dd class="invisible">423 areas covering more than 85 million acres in every state</dd>
+    <br>
+    <dt>What is the largest National Park site?</dt>
+    <dd class="invisible">Wrangell-St. Elias National Park and Preserve, AK, at 13.2 million acres</dd>
+    <br>
+    <dt>What is the most visited National Park?</dt>
+    <dd class="invisible">In 2019 it was Golden Gate National Recreation Area</dd>
+    <br>
+    <dt>Can I bring my pet to a national park?</dt>
+    <dd class="invisible">Only in some National Parks in well-Developed area.</dd>
+    <br>
+    <dt>How do I obtain a park entrance pass?</dt>
+    <dd class="invisible">Fewer than one-third of the national parks charge entrance fees.
+        You can obtain park entrance passes by visiting a park site that
+        charges an entrance fee. </dd>
+    <br>
+    <dt>How do I reserve a tour in a park?</dt>
+    <dd class="invisible">You can book some park tours through Recreation.gov such as Pearl
+        Harbor National Memorial, many Mammoth Cave National Park cave tours,
+        Independence National Historical Park tours, and more. Not all parks
+        participate in this reservation service.</dd>
+    <br>
+    <dt>How do I apply for a job with the National Park Service?</dt>
+    <dd class="invisible">National Park Service jobs, including both permanent and seasonal positions,
+        are listed on USAJOBs. Learn more about working for us, including opportunities
+        for students and volunteers and tips for applying for jobs.</dd>
+    <br>
+    <dt>How do I find out about contracting opportunities?</dt>
+    <dd class="invisible">Opportunities to contract with the National Park Service are posted to FedBizOpps.gov,
+        the federal government’s electronic business portal.</dd>
+</dl>
+<script src="js/jquery-3.5.1.js"></script>
+<script>
+    $(document).ready(function(){
+
+        $(document).click(function(e){
+            e.preventDefault();
+            $('.invisible').toggleClass();
+            $('dt').toggleClass('highlighted')
+        });
+    });
+
+</script>
+
+
+<script src="js/jquery_faq.js"></script>
+</body>
+</html>
