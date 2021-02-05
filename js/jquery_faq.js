@@ -1,9 +1,5 @@
 "use strict";
 
-// $(document).ready(function(){
-
-
-
 $(document).click(function(e){
         e.preventDefault();
         $('.invisible').toggleClass();
