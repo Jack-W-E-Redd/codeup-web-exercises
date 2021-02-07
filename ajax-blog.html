@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Blog by Ajax</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/ajax-blog.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Blog by Ajax</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sweets Map</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<header>
+    <div class="jumbotron jumbotron-fluid d-md-block">
+        <div class="container">
+            <h1 class="display-4 text-light"></h1>
+        </div>
+    </div>
+</header>
+
+<article class="aboutUs row">
+
+
+    <div class="center-block col">
+        <h1 class="text-center">ABOUT US</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+            eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.</p>
+    </div>
+</article>
+<article>
+    <div id="post" class="row postDesign"></div>
+</article>
+
+<script src="js/jquery-3.5.1.js"></script>
+<script>
+    (function (){
+        //requesting json info with the $.get method
+        $(document).ready(function(){
+            let blogObjReq = $.get("data/blog.json").done(blogPost)
+            function blogPost(items){
+                let html = '';
+                items.forEach(function(item){
+                    let itemsHtml = "<div class='col-12 col-md-6'>"
+                    itemsHtml += "<h1>" + item.title + "</h1>"
+                    itemsHtml += "<p>" + item.content + "</p>"
+                    itemsHtml += "<p>" + item.categories + "</p>"
+                    itemsHtml += "<p>" + item.date + "</p>"
+                    itemsHtml += "</div>"
+                    html += itemsHtml;
+                });
+                $('#post').html(html);
+            }
+        });
+
+    })();
+</script>
+</body>
+</html>
