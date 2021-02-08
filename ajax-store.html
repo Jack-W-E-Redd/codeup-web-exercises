@@ -41,9 +41,9 @@
         //             its contents and fields
         //       HINT: You will want to target #insertProducts for your new HTML elements
 
-        $.get("data/inventory.json").done(toolsTableBuilder);
+        $.get("data/inventory.json").done(toolsTable);
 
-        function toolsTableBuilder(items){
+        function toolsTable(items){
             let html = "";
             console.log(items);
             items.forEach(function (item){
@@ -58,7 +58,7 @@
 
         }
         $('#refresh').click(function (){
-            $.get("data/inventory.json").done(toolsTableBuilder);
+            $.get("data/inventory.json").done(toolsTable);
         })
 
     })();
