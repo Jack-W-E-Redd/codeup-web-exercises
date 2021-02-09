@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>weather map</title>
+</head>
+<body>
+
+<h1>Weather</h1>
+<div id="days"></div>
+
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/keys.js"></script>
+<script>
+    $.get("https://api.openweathermap.org/data/2.5/onecall?lat=22.8829&lon=-97.9943&units=imperial&appid="+OPEN_WEATHER_TOKEN).done(function(data){
+        console.log(data);
+        weather(data.daily)
+    })
+    function weather(days) {
+        console.log(days);
+        let html = "";
+        days.forEach(function (day) {
+            let dayHtml = '<div>'
+            dayHtml += '<p>' + day.temp.max + '</p>';
+            html += dayHtml;
+        })
+        $('#days').html(html)
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/keys.js"></script>
+<script>
+
+    $.get("http://api.openwethermap.org/data/2.5/weather", {
+        APPID: OPEN_WEATHER_TOKEN,
+        q:      "San Antonio, US"
+    }).done(function (data) {
+        console.log(data);
+    });
+
+</script>
+
+</body>
+</html>
