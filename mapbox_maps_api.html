@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox_Maps_api</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.0/mapbox-gl.css' rel='stylesheet'/>
+
+</head>
+<body>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+<link
+        rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+        type="text/css"
+/>
+
+<div id='map' style='width: 600px; height: 400px; margin: 15vh auto;'></div>
+<script src="js/keys.js"></script>
+<script>
+
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [32.7767, 96.7970], // long lat
+        zoom: 9
+    });
+
+    function geocode(search, token) {
+        var baseUrl = 'https://api.mapbox.com';
+        var endPoint = '/geocoding/v5/mapbox.places/';
+        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+            .then(function(res) {
+                return res.json();
+            }).then(function(data) {
+                return data.features[0].center;
+            });
+    }
+
+    var resturants = [
+        {
+            name: "Hibiki Sushi",
+            address: "2651 Commerce St, Dallas, TX 75226",
+            latLong: [],
+            cuisine: [
+                "Sushi Bars",
+                "Japanese"
+            ],
+            price: "$$"
+        }, {
+            name: "Jonathon's Oak Cliff",
+            address: "1111 N Beckley Ave, Dallas, TX 75203",
+            latLong: [],
+            cuisine: [
+                "American (New)",
+                "Breakfast & Brunch"
+            ],
+            price: "$$"
+        }, {
+            name: "Bite Bistro",
+            address: "1150 Empire Central Pl, Dallas, TX 75247",
+            latLong: [],
+            cuisine: [
+                "Coffee $ Tea",
+                "Breakfast & Brunch",
+                "Sandwiches"
+            ],
+            price: "$$"
+        },
+    ]
+
+    var nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'bottom-right');
+
+    geocode(resturants[0].address, mapboxToken).then(function (data) {
+        console.log(data);
+    })
+    geocode(resturants[1].address, mapboxToken).then(function (data) {
+        console.log(data);
+    })
+    geocode(resturants[2].address, mapboxToken).then(function (data) {
+        console.log(data);
+    })
+
+    resturants.forEach(function(resturant) {
+        let popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+            '<h3>' + resturant.name + '</h3>' +
+            '<p>' + resturant.address + '</p>' +
+            '<p>' + resturant.cuisine + '</p>' +
+            '<p>' + resturant.price + '</p>');
+        let marker = new mapboxgl.Marker()
+            .setLngLat(resturant.latLong)
+            .setPopup(popup)
+            .addTo(map);
+    })
+
+    map.addControl(
+        new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+        })
+    );
+
+</script>
+
+</body>
+</html>
