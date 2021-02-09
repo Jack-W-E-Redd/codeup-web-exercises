@@ -19,7 +19,7 @@
 <script src="js/keys.js"></script>
 <script>
 
-    mapboxgl.accessToken = mapboxToken;
+    mapboxgl.accessToken = mapBoxToken;
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
@@ -73,13 +73,13 @@
     var nav = new mapboxgl.NavigationControl();
     map.addControl(nav, 'bottom-right');
 
-    geocode(resturants[0].address, mapboxToken).then(function (data) {
+    geocode(resturants[0].address, mapBoxToken).then(function (data) {
         console.log(data);
     })
-    geocode(resturants[1].address, mapboxToken).then(function (data) {
+    geocode(resturants[1].address, mapBoxToken).then(function (data) {
         console.log(data);
     })
-    geocode(resturants[2].address, mapboxToken).then(function (data) {
+    geocode(resturants[2].address, mapBoxToken).then(function (data) {
         console.log(data);
     })
 
